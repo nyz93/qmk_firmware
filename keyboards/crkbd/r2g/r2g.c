@@ -17,6 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "r2g.h"
+#include "print.h"
 
 #ifdef RGB_MATRIX_ENABLE
 
@@ -238,3 +239,23 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 }
 #endif // OLED_ENABLE
 
+#ifdef CONSOLE_ENABLE
+layer_state_t layer_state_set_kb(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+        case L_BASE:
+            print("layer: base\n");
+            break;
+        case L_LOWER:
+            print("layer: lower\n");
+            break;
+        case L_RAISE:
+            print("layer: raise\n");
+            break;
+        case L_ADJUST:
+            print("layer: adjust\n");
+            break;
+    }
+    return state;
+}
+
+#endif // CONSOLE_ENABLE
