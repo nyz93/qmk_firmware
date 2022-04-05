@@ -1,9 +1,7 @@
-// Initialize variable holding the binary
-// representation of active modifiers.
 #include QMK_KEYBOARD_H
 
 uint8_t mod_state;
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+bool process_record_user_shift(uint16_t keycode, keyrecord_t *record) {
     // Store the current modifier state in the variable for later reference
     mod_state = get_mods();
     switch (keycode) {
@@ -19,6 +17,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 // First temporarily canceling both shifts so that
                 // shift isn't applied to the KC_DEL keycode
                 del_mods(MOD_MASK_SHIFT);
+                wait_ms(10); // macOS?
                 register_code(KC_DEL);
                 // Update the boolean variable to reflect the status of KC_DEL
                 delkey_registered = true;

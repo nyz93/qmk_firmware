@@ -219,12 +219,22 @@ void oled_render_logo_r2g(void) {
     //oled_set_cursor(oled_max_chars()/2,oled_max_lines()/2);
     //oled_write_P(PSTR("R2G"), false);
 }
+bool user_is_host_linux(void);
+
+void oled_render_host(void) {
+    if (user_is_host_linux()) {
+        oled_write_ln_P(PSTR("\nOS: Linux"), false);
+    } else {
+        oled_write_ln_P(PSTR("\nOS: macOS"), false);
+    }
+}
 
 bool oled_task_kb(void) {
     if (!oled_task_user()) { return false; }
     if (is_keyboard_master()) {
         oled_render_layer_state_r2g();
         oled_render_keylog_r2g();
+        oled_render_host();
     } else {
         oled_render_logo_r2g();
     }

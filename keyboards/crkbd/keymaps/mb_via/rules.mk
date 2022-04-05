@@ -1,3 +1,9 @@
 MOUSEKEY_ENABLE     = yes     # Mouse keys
 VIA_ENABLE          = no         # Enable VIA
+RAW_ENABLE          = yes         # Enable VIA
+DYNAMIC_KEYMAP_ENABLE = no
+TAP_DANCE_ENABLE = yes
 SRC += shift.c
+SRC += host.c
+SRC += process_record.c
+SRC += tapdance.c
