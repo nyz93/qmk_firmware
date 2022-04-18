@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "tapdance.h"
+#include "user_keymap.h"
 #include "user_host.h"
 
 typedef struct { uint8_t kc; } dance_key_arg;

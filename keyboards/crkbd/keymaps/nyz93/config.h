@@ -18,7 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
-#include "tapdance.h"
 
 #define RGB_MATRIX_KEYPRESSES
 /* Select hand configuration */
@@ -48,11 +47,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef ENABLE_RGB_MATRIX_SOLID_SPLASH
 #define EE_HANDS
 #define SPLIT_TRANSACTION_IDS_USER USER_SYNC_HOST_OS
-
-enum layers {
-    DEFAULT,
-    LOWER,
-    RAISE,
-    ADJUST,
-    MOUSE
-};

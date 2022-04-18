@@ -1,5 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "user_host.h"
+#include "user_keymap.h"
+
 void oled_render_host(void) {
     oled_write_P(PSTR("            "), false);
     if (user_is_host_linux()) {
@@ -40,4 +42,3 @@ bool oled_task_user(void) {
     }
     return false;
 }
-
