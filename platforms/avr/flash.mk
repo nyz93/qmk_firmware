@@ -73,6 +73,9 @@ dfu-split-left: $(BUILD_DIR)/$(TARGET).hex cpfirmware check-size
 dfu-split-right: $(BUILD_DIR)/$(TARGET).hex cpfirmware check-size
 	$(call EXEC_DFU,eeprom-righthand.eep)
 
+dfu-split-both: dfu-split-left dfu-split-right
+	true
+
 AVRDUDE_PROGRAMMER ?= avrdude
 
 define EXEC_AVRDUDE

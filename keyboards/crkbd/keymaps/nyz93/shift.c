@@ -17,7 +17,7 @@ bool process_record_user_shift(uint16_t keycode, keyrecord_t *record) {
                 // First temporarily canceling both shifts so that
                 // shift isn't applied to the KC_DEL keycode
                 del_mods(MOD_MASK_SHIFT);
-                wait_ms(10); // macOS?
+                wait_ms(50); // macOS?
                 register_code(KC_DEL);
                 // Update the boolean variable to reflect the status of KC_DEL
                 delkey_registered = true;
