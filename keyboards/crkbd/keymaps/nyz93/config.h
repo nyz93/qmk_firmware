@@ -47,3 +47,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef ENABLE_RGB_MATRIX_SOLID_SPLASH
 #define EE_HANDS
 #define SPLIT_TRANSACTION_IDS_USER USER_SYNC_HOST_OS
+#define LAYER_STATE_8BIT
