@@ -1,3 +1,4 @@
+// clang-format off
 #include QMK_KEYBOARD_H
 #include "user_keymap.h"
 
@@ -18,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC,                   KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
     KC_LCTL, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                         KC_MINS, KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS, KC_GRV,
     KC_LSFT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                         KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,
-                                        KC_LGUI, MO(ADJUST), KC_SPC, KC_ENT, KC_TRNS, KC_RALT
+                                        KC_LGUI, MO(ADJUST), KC_SPC, KC_ENT, KC_TRNS, KC_LALT
     ),
 	[ADJUST] = LAYOUT_split_3x6_3(
     LCA(KC_F1), LCA(KC_F2), LCA(KC_F3), LCA(KC_F4), LCA(KC_F5), LCA(KC_F6),             LCA(KC_F7), LCA(KC_F8), LCA(KC_F9), LCA(KC_F10), LCA(KC_F11), LCA(KC_F12),

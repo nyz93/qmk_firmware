@@ -6,10 +6,4 @@ enum user_tapdance_keys {
     KC_TD_V,
 };
 
-enum layers {
-    DEFAULT,
-    LOWER,
-    RAISE,
-    ADJUST,
-    MOUSE
-};
+enum layers { DEFAULT, LOWER, RAISE, ADJUST, MOUSE };
