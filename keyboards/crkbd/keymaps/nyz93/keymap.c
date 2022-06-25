@@ -10,7 +10,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         KC_LGUI, OSL(LOWER), KC_SPC, KC_ENT, OSL(RAISE), KC_RALT
     ),
 	[LOWER] = LAYOUT_split_3x6_3(
-    KC_TAB, KC_1, KC_2, KC_3, KC_4, KC_5,                               KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
+    KC_PER_HOST_ALT_TAB, KC_1, KC_2, KC_3, KC_4, KC_5,                               KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC,
     KC_LCTL, KC_NO, KC_NO, KC_NO, KC_NO, TG(MOUSE),                         KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO, KC_NO,
     KC_LSFT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                         KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN,
                                         KC_LGUI, KC_TRNS, KC_SPC, KC_ENT, MO(ADJUST), KC_RALT
