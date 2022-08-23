@@ -1,0 +1,20 @@
+name: nightly build
+
+on:
+    schedule:
+        - cron: "0 0 * * *"
+
+jobs:
+    update:
+        runs-on: ubuntu-latest
+        container: qmkfm/qmk_cli
+        steps:
+            - uses: actions/checkout@v2
+            - name: update master
+              run: |
+                  git config --global user.name 'Nyikos Zoltán'
+                  git config --global user.email 'nyikoszoltan0@gmail.com'
+                  git remote add upstream https://github.com/qmk/qmk_firmware
+                  git fetch upstream
+                  git merge upstream/master
+                  git push
