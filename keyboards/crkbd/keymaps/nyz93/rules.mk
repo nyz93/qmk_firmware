@@ -10,4 +10,4 @@ RGB_MATRIX_ENABLE = yes
 RGBLIGHT_ENABLE = no
 OLED_ENABLE = yes
 SPLIT_OLED_ENABLE = yes
-SRC += rgb_init.c shift.c per_host.c host.c process_record.c tapdance.c oled.c
+SRC += rgb_init.c shift.c per_host.c host.c process_record.c tapdance.c oled.c alt_cleanup.c
