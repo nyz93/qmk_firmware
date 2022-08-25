@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         KC_LGUI, MO(ADJUST), KC_SPC, KC_ENT, KC_TRNS, KC_LALT
     ),
 	[ADJUST] = LAYOUT_split_3x6_3(
-    LCA(KC_F1), LCA(KC_F2), LCA(KC_F3), LCA(KC_F4), LCA(KC_F5), LCA(KC_F6),             LCA(KC_F7), LCA(KC_F8), LCA(KC_F9), LCA(KC_F10), LCA(KC_F11), LCA(KC_F12),
+    LALT(KC_F1), LALT(KC_F2), LALT(KC_F3), LALT(KC_F4), LALT(KC_F5), LALT(KC_F6),             LALT(KC_F7), LALT(KC_F8), LALT(KC_F9), LALT(KC_F10), LALT(KC_F11), LALT(KC_F12),
     RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, KC_NO, KC_NO,                                   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
     RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, KC_NO, KC_NO,                                   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                                         KC_LGUI, KC_TRNS, KC_SPC, KC_ENT, KC_TRNS, KC_RALT
