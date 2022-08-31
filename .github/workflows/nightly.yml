@@ -13,10 +13,5 @@ jobs:
               with:
                   fetch-depth: 0
             - name: update master
-              run: |
-                  git config --global user.name 'Nyikos Zoltán'
-                  git config --global user.email 'nyikoszoltan0@gmail.com'
-                  git remote add upstream https://github.com/qmk/qmk_firmware
-                  git fetch upstream
-                  git merge upstream/master
-                  git push
+              shell: bash
+              run: ./.github/scripts/update.sh
