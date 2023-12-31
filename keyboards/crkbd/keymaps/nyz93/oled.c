@@ -14,7 +14,8 @@ void oled_render_host(void) {
 
 void oled_render_version(void) {
     const char* hash = PSTR(QMK_GIT_HASH);
-    for(int i = 0; i<strlen(hash)-10; i++) {
+    int pad = (OLED_DISPLAY_WIDTH/OLED_FONT_WIDTH) - strlen(hash) - 9;
+    for(int i = 0; i<pad; i++) {
         oled_write_char(' ', false);
     }
     oled_write_P(PSTR("Version: "), false);
