@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "user_host.h"
 #include "user_keymap.h"
+#include "version.h"
 
 void oled_render_host(void) {
     oled_write_P(PSTR("            "), false);
@@ -11,7 +12,16 @@ void oled_render_host(void) {
     }
 }
 
-void oled_render_keylog_r2g(void);
+void oled_render_version(void) {
+    const char* hash = PSTR(QMK_GIT_HASH);
+    for(int i = 0; i<strlen(hash)-10; i++) {
+        oled_write_char(' ', false);
+    }
+    oled_write_P(PSTR("Version: "), false);
+    oled_write_ln_P(hash, false);
+}
+
+void oled_render_keylog(void);
 void oled_render_layer_state_user(void) {
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state)) {
@@ -36,9 +46,10 @@ void oled_render_layer_state_user(void) {
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         oled_render_layer_state_user();
-        oled_render_keylog_r2g();
+        oled_render_keylog();
     } else {
         oled_render_host();
+        oled_render_version();
     }
     return false;
 }

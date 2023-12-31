@@ -104,7 +104,7 @@ static const char *depad_str(const char *depad_str, char depad_char) {
     return depad_str;
 }
 
-static void oled_render_keylog(void) {
+void oled_render_keylog(void) {
     oled_write_char('0' + last_row, false);
     oled_write_P(PSTR("x"), false);
     oled_write_char('0' + last_col, false);
