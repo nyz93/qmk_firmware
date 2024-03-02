@@ -4,11 +4,20 @@
 #include "version.h"
 
 void oled_render_host(void) {
-    oled_write_P(PSTR("            "), false);
-    if (user_is_host_linux()) {
-        oled_write_ln_P(PSTR("OS: Linux"), false);
-    } else {
-        oled_write_ln_P(PSTR("OS: macOS"), false);
+    switch(user_host_id()) {
+        case USER_HOST_MAC:
+            oled_write_P(PSTR("            "), false);
+            oled_write_ln_P(PSTR("OS: macOS"), false);
+            break;
+        case USER_HOST_LINUX:
+            oled_write_P(PSTR("            "), false);
+            oled_write_ln_P(PSTR("OS: Linux"), false);
+            break;
+        case USER_HOST_GAME:
+            oled_write_P(PSTR("      "), false);
+            oled_write_ln_P(PSTR("OS: Linux(game)"), false);
+            break;
+        default: break;
     }
 }
 

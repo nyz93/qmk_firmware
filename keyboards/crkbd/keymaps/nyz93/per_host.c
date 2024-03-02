@@ -6,10 +6,10 @@ bool is_alt_tabbing = false;
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     if (get_highest_layer(state) == DEFAULT) {
-        if (user_is_host_linux()) {
-            unregister_code(KC_LEFT_ALT);
-        } else {
+        if (user_host_id() == USER_HOST_MAC) {
             unregister_code(KC_LEFT_GUI);
+        } else {
+            unregister_code(KC_LEFT_ALT);
         }
         is_alt_tabbing = false;
     }
@@ -21,10 +21,10 @@ bool process_record_user_per_host(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
             if (!is_alt_tabbing) {
                 is_alt_tabbing = true;
-                if (user_is_host_linux()) {
-                    register_code(KC_LEFT_ALT);
-                } else {
+                if (user_host_id() == USER_HOST_MAC) {
                     register_code(KC_LEFT_GUI);
+                } else {
+                    register_code(KC_LEFT_ALT);
                 }
             }
             register_code(KC_TAB);
